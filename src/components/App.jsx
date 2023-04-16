@@ -1,16 +1,22 @@
+import React from 'react';
+import Counter from './Counter/Counter';
+import css from "./Section/Section.module.css";
+
+
+
+
+const state = {
+  good: 0,
+  neutral: 0,
+  bad: 0
+}
+
+// РЕНДНЕРІНГ сторінки
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+     <div className={css.container}>
+        <h1>Please leave feedback</h1>
+        <Counter />
+     </div>
   );
 };
