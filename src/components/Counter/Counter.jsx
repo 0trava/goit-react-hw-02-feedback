@@ -7,23 +7,36 @@ import css from "./Counter.module.css"; // підключення стилів �
 // РЕНДНЕРІНГ - counter
 class Counter extends React.Component {
 
-    // Змінні ( обов'язкво з назвою state)
-    state = {
-        valueGod: 0,
-        valueNeutral: 0,
-        valueBad: 0,
-    }
+    // !!! ОБОВ'ЯЗКОВО (Стан застосунку повинен бути наступного вигляду, додавати нові властивості не можна)
+      state = {
+        good: 0,
+        neutral: 0,
+        bad: 0
+      }
 
 
     // BUTTON - Good команди при click
     clickGood = () => {
         console.log("Клик - Good");
-        this.setState({valueGod:1});
+
+        // Додавання обов'язково робимо через функцію, з поверненням стану
+        this.setState((prevState) => {
+            return {
+                good: prevState.good + 1,
+            }  
+        });
     }
 
     // BUTTON - Neutral команди при click
     clickNeutral = () => {
         console.log("Клик - Neutral");
+
+        // Додавання обов'язково робимо через функцію, з поверненням стану
+        this.setState((prevState) => {
+            return {
+                neutral: prevState.neutral + 1,
+            }  
+        });
 
     }
 
@@ -31,14 +44,27 @@ class Counter extends React.Component {
     clickBad = () => {
         console.log("Клик - Bad");
 
+        // Додавання обов'язково робимо через функцію, з поверненням стану
+        this.setState((prevState) => {
+            return {
+                bad: prevState.bad + 1,
+            }  
+        });
     }
 
+    // МЕТОД - відображення загальної кількості зібраних відгуків
+    // countTotalFeedback()
+
+
+
+    // МЕТОД - відсоток позитивних відгуків
+    // countPositiveFeedbackPercentage()
 
 
     render () {
         return (
             <div className="Counter">
-
+                
             <div className='Counter__controls'>
                 <button onClick={this.clickGood} type="button" className={css.btn}>Good</button>
                 <button onClick={this.clickNeutral} type="button" className={css.btn}>Neutral</button>

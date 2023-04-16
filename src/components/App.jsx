@@ -5,7 +5,7 @@ import css from "./Section/Section.module.css";// підключення сти�
 
 
 
-const state = {
+state = {
   good: 0,
   neutral: 0,
   bad: 0
