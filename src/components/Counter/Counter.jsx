@@ -6,14 +6,34 @@ import css from "./Counter.module.css"; // підключення стилів �
 
 // РЕНДНЕРІНГ - counter
 class Counter extends React.Component {
+
+    // BUTTON - Good команди при click
+    clickGood = () => {
+        console.log("Клик - Good");
+    }
+
+    // BUTTON - Neutral команди при click
+    clickNeutral = () => {
+        console.log("Клик - Neutral");
+
+    }
+
+    // BUTTON - Bad команди при click
+    clickBad = () => {
+        console.log("Клик - Bad");
+
+    }
+
+
+
     render () {
         return (
             <div className="Counter">
 
             <div className='Counter__controls'>
-                <button onClick={() => {console.log("Клик - Good")}} type="button" className={css.btn}>Good</button>
-                <button onClick={() => {console.log("Клик - Neutral")}} type="button" className={css.btn}>Neutral</button>
-                <button onClick={() => {console.log("Клик - Bad")}} type="button" className={css.btn}>Bad</button>
+                <button onClick={this.clickGood} type="button" className={css.btn}>Good</button>
+                <button onClick={this.clickNeutral} type="button" className={css.btn}>Neutral</button>
+                <button onClick={this.clickBad} type="button" className={css.btn}>Bad</button>
             </div>
 
             <h2 className={css.counter__stat_title}>Statistics</h2>
