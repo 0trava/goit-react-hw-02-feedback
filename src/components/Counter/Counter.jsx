@@ -7,9 +7,18 @@ import css from "./Counter.module.css"; // підключення стилів �
 // РЕНДНЕРІНГ - counter
 class Counter extends React.Component {
 
+    // Змінні ( обов'язкво з назвою state)
+    state = {
+        valueGod: 0,
+        valueNeutral: 0,
+        valueBad: 0,
+    }
+
+
     // BUTTON - Good команди при click
     clickGood = () => {
         console.log("Клик - Good");
+        this.setState({valueGod:1});
     }
 
     // BUTTON - Neutral команди при click
@@ -39,13 +48,13 @@ class Counter extends React.Component {
             <h2 className={css.counter__stat_title}>Statistics</h2>
             <ul className={css.counter__list}>
                 <li className='Counter_item'>
-                    <p>Good: <span className={css.counter__value}>0</span></p>
+                    <p>Good: <span className={css.counter__value}>{this.state.valueGod}</span></p>
                 </li>
                 <li className='Counter_item'>
-                    <p>Neutral: <span className={css.counter__value}>0</span></p>
+                    <p>Neutral: <span className={css.counter__value}>{this.state.valueNeutral}</span></p>
                 </li>
                 <li className='Counter_item'>
-                    <p>Bad: <span className={css.counter__value}>0</span></p>
+                    <p>Bad: <span className={css.counter__value}>{this.state.valueBad}</span></p>
                 </li>
                 <li className='Counter_item'>
                     <p>Total: <span className='Counter__total'>0</span></p>
