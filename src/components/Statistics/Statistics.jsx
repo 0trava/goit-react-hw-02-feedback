@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import css from "./Statistics.module.css"; // підключення стилів на картку
 
 
-function Statistics({ good, neutral, bad, countTotalFeedback }) {
+function Statistics({ good, neutral, bad, countTotalFeedback, countPositiveFeedbackPercentage }) {
 
         return (
             <div className="Counter">
@@ -20,7 +20,7 @@ function Statistics({ good, neutral, bad, countTotalFeedback }) {
                     <p>Total: <span className='Counter__total'>{countTotalFeedback}</span></p>
                 </li>
                 <li className='Counter_item'>
-                    <p>Positive feedback: <span className='Counter__percent'>0</span> %</p>
+                    <p>Positive feedback: <span className='Counter__percent'>{countPositiveFeedbackPercentage}</span> %</p>
                 </li>
             </ul>
         </div>
